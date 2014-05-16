@@ -64,6 +64,7 @@
         self.dataSource = self;
         self.delegate = self;
         self.allowsSelection = YES;
+        self.canCancelContentTouches = YES;
         [self registerClass:[ReuseCell class] forCellWithReuseIdentifier:@"ReuseCell"];
         
         self.data = data;
@@ -206,7 +207,6 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    NSLog(@"delegate: %@", self.delegate);
     return 1;
 }
 
@@ -248,7 +248,6 @@
         cell = [[ReuseCell alloc] init];
     }
     
-    NSLog(@"%@", cell.gestureRecognizers);
     cell.item.text = self.infData[indexPath.row];
     cell.item.backgroundColor = (indexPath.row % 2) ? [UIColor lightGrayColor] : [UIColor grayColor];
     
@@ -271,5 +270,21 @@
     [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.centerItem inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchPoint = [touch locationInView:self];
+    CGFloat touchX = touchPoint.x;
+    
+    NSArray *visibleCells = self.indexPathsForVisibleItems;
+    for (NSIndexPath *indexPath in visibleCells) {
+        ReuseCell *cell = (ReuseCell *)[self cellForItemAtIndexPath:indexPath];
+        if (touchX > CGRectGetMinX(cell.frame) && touchX < CGRectGetMaxX(cell.frame)) {
+            [self collectionView:self didSelectItemAtIndexPath:indexPath];
+            return;
+        }
+        
+    }
+}
 
 @end

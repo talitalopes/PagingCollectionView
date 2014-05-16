@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = @[@"Jogos Passados", @"Time que sigo", @"Jogos Futuros"];
+    self.data = @[@"Time que sigo", @"Jogos Futuros", @"Jogos Passados"];
     
     self.carousel = [[CarrouselCollectionView alloc] initWithFrame:CGRectMake(0, 64, 320, 40) andData:self.data];
     self.carousel.carrouselDelegate = self;

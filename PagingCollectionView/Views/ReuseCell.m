@@ -15,15 +15,16 @@
     self = [super initWithFrame:frame];
     if (self) {
         NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"ReuseCell" owner:self options:nil];
-        UIView* mainView = (UIView*)[nibViews objectAtIndex:0];
+        UIView* mainView = (UIView*)
+        [nibViews objectAtIndex:0];
         [self addSubview:mainView];
     }
     return self;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"oi");
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"Next responder \n%@", self.superview);
+//}
 
 /*
  // Only override drawRect: if you perform custom drawing.
