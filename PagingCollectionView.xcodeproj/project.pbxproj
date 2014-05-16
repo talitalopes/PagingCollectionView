@@ -21,6 +21,9 @@
 		7FFC3C7E192595570058AD40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFC3C60192595570058AD40 /* UIKit.framework */; };
 		7FFC3C86192595570058AD40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC3C84192595570058AD40 /* InfoPlist.strings */; };
 		7FFC3C88192595570058AD40 /* PagingCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC3C87192595570058AD40 /* PagingCollectionViewTests.m */; };
+		7FFC3C94192596CC0058AD40 /* CarrouselCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC3C93192596CC0058AD40 /* CarrouselCollectionView.m */; };
+		7FFC3C97192596F40058AD40 /* ReuseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC3C96192596F40058AD40 /* ReuseCell.m */; };
+		7FFC3C991925972B0058AD40 /* ReuseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC3C981925972B0058AD40 /* ReuseCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		7FFC3C83192595570058AD40 /* PagingCollectionViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagingCollectionViewTests-Info.plist"; sourceTree = "<group>"; };
 		7FFC3C85192595570058AD40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FFC3C87192595570058AD40 /* PagingCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagingCollectionViewTests.m; sourceTree = "<group>"; };
+		7FFC3C92192596CC0058AD40 /* CarrouselCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrouselCollectionView.h; sourceTree = "<group>"; };
+		7FFC3C93192596CC0058AD40 /* CarrouselCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrouselCollectionView.m; sourceTree = "<group>"; };
+		7FFC3C95192596F40058AD40 /* ReuseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseCell.h; sourceTree = "<group>"; };
+		7FFC3C96192596F40058AD40 /* ReuseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseCell.m; sourceTree = "<group>"; };
+		7FFC3C981925972B0058AD40 /* ReuseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReuseCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 		7FFC3C62192595570058AD40 /* PagingCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				7FFC3C91192596B40058AD40 /* Views */,
 				7FFC3C6B192595570058AD40 /* AppDelegate.h */,
 				7FFC3C6C192595570058AD40 /* AppDelegate.m */,
 				7FFC3C6E192595570058AD40 /* Main.storyboard */,
@@ -150,6 +159,18 @@
 				7FFC3C84192595570058AD40 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FFC3C91192596B40058AD40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7FFC3C981925972B0058AD40 /* ReuseCell.xib */,
+				7FFC3C95192596F40058AD40 /* ReuseCell.h */,
+				7FFC3C96192596F40058AD40 /* ReuseCell.m */,
+				7FFC3C92192596CC0058AD40 /* CarrouselCollectionView.h */,
+				7FFC3C93192596CC0058AD40 /* CarrouselCollectionView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +250,7 @@
 			files = (
 				7FFC3C75192595570058AD40 /* Images.xcassets in Resources */,
 				7FFC3C67192595570058AD40 /* InfoPlist.strings in Resources */,
+				7FFC3C991925972B0058AD40 /* ReuseCell.xib in Resources */,
 				7FFC3C70192595570058AD40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +273,8 @@
 				7FFC3C73192595570058AD40 /* ViewController.m in Sources */,
 				7FFC3C6D192595570058AD40 /* AppDelegate.m in Sources */,
 				7FFC3C69192595570058AD40 /* main.m in Sources */,
+				7FFC3C94192596CC0058AD40 /* CarrouselCollectionView.m in Sources */,
+				7FFC3C97192596F40058AD40 /* ReuseCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +479,7 @@
 				7FFC3C8D192595570058AD40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FFC3C8E192595570058AD40 /* Build configuration list for PBXNativeTarget "PagingCollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +488,7 @@
 				7FFC3C90192595570058AD40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
